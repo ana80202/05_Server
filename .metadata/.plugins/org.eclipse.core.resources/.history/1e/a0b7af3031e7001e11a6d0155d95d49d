@@ -1,0 +1,28 @@
+package edu.kh.servlet.controller;
+
+import java.io.IOException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+//Controller : 요청(request)에 따라 어떤 service를 호출할지 "제어"하고,
+//             어떻게 응답(Response)을 할지 "제어"하는 역할
+public class ExampleController1 extends HttpServlet{
+	
+	//클라이언트 -- 요청 --> 서버(controller -> service -> DAO -> DB)
+	//9버전때는 javax였는데 10버전으로 오면서 jakarta 로 변경 되었다.
+	
+	
+	//doGet() 메서드
+	//->GET방식 요청을 처리하는 메서드
+	// request : req  /   response : resp 
+	@Override //HttpServlet 템플릿의 메서드를 오버라이딩하여 사용하면 된다
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	
+		
+	
+	}
+
+}
