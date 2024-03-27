@@ -72,6 +72,34 @@ public class MemberDAO {
 		return loginMember;
 	}
 
+	/**회원가입 SQL 수행할 DAO
+	 * @param conn
+	 * @param member
+	 * @return result
+	 */
+	public int signup(Connection conn, Member member) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("signup");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, member.getMemberId());
+			pstmt.setString(2, member.getMemberPw());
+			pstmt.setString(3, member.getMemberNickname());
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
+
 	
 	
 	

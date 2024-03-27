@@ -73,6 +73,127 @@ public class TodoDAO {
 
 		return todoList;
 	}
+
+	/**Todo 등록 수행할 SQL DAO
+	 * @param conn
+	 * @param title
+	 * @param memo
+	 * @param memberNo
+	 * @return result
+	 */
+	public int insert(Connection conn, String title, String memo, int memberNo)  throws Exception{
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("insert");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, title);
+			pstmt.setString(2, memo);
+			pstmt.setInt(3, memberNo);
+			
+			result = pstmt.executeUpdate();
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	/**Todo 삭제 SQL 수행 DAO
+	 * @param conn
+	 * @param todoNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int delete(Connection conn, String todoNo) throws Exception {
+		
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("delete");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, todoNo);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		return result;
+	}
+
+	public  Todo update(Connection conn, String todoNo, int memberNo) throws Exception {
+		
+		Todo todo = null;
+		
+		try {
+			String sql = prop.getProperty("update");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setInt(1, memberNo);
+			pstmt.setString(2, todoNo);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				todo = new Todo();
+				todo.setTodoNo(rs.getInt("TODO_NO"));
+				todo.setTodoTitle(rs.getString("TODO_TITLE"));
+				todo.setTodoMemo(rs.getString("TODO_MEMO"));
+				todo.setTodoDate(rs.getString("TODO_DATE"));
+			}
+			
+		}finally {
+			close(rs);
+			close(pstmt);
+			
+		}
+		
+		return todo;
+	}
+
+	/**Todo 수정 SQL 수행 DAO
+	 * @param conn
+	 * @param title
+	 * @param memo
+	 * @param memberNo
+	 * @param todoNo
+	 * @return result
+	 * @throws Exception
+	 */
+	public int update(Connection conn, String title, String memo, int memberNo, String todoNo) throws Exception {
+			
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("update2");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, title);
+			pstmt.setString(2, memo);
+			pstmt.setString(3, todoNo);
+			pstmt.setInt(4, memberNo);
+			
+			result = pstmt.executeUpdate();
+			
+			
+		}finally {
+			close(pstmt);
+		}
+		
+		
+		return result;
+	}
 	
 	
 	

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8">ㄴ
 	
 	<%--css, js 파일 연결할때 webapp 폴더 기준! --%>
 	<link rel="stylesheet" href="/resources/css/main.css">
@@ -34,8 +34,13 @@
 					</div>
 					
 					<button>로그인</button>
+					
+					<a href = "/signup" class="signup">회원가입 </a>
+					
 				</form>
 			</c:when>
+			
+			
 			
 			
 	<%--로그인을 했다면 : 현재 로그인한 사람의 투두리스트 출력--%>
@@ -57,8 +62,10 @@
 								<td>${todo.todoTitle}</td>
 								<td>${todo.todoMemo}</td>
 								<td>${todo.todoDate}</td>
-								<td><a class="update-btn">수정</a></td>
-								<td><a class="delete-btn">삭제</a></td>
+								<td><a href="update?todoNo=${todo.todoNo}"class="update-btn">수정</a></td>
+								<td><a href="/delete?todoNo=${todo.todoNo}" 
+								onclick="return confirm('정말 삭제하시겠습니까?');"
+								class="delete-btn">삭제</a></td>
 							</tr>
 						</c:forEach>
 					</table>
@@ -66,7 +73,7 @@
 				</c:choose>
 				
 				<div class="button-div">
-					<a class="insert-btn"> 등록하기</a>
+					<a href="/insert" class="insert-btn"> 등록하기</a>
 					<a href="/logout" class="logout-btn">로그아웃</a>
 				</div>
 				

@@ -50,7 +50,7 @@ public class JDBCTemplate {
 				
 				prop.loadFromXML( new FileInputStream( filePath) );
 				// -> XML 파일에 작성된 내용이 Properties 객체에 모두 저장됨.
-				
+				ㄴ
 				// XML에서 읽어온 값을 모두 변수에 저장
 				String driver = prop.getProperty("driver");
 				String url = prop.getProperty("url");
