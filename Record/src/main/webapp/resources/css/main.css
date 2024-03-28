@@ -1,15 +1,34 @@
+
+/* 로고용 폰트 */
+/*@font-face {
+    font-family: 'TTTogether';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/TTTogetherA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+/* 본문용 폰트 */
 @font-face {
-    font-family: 'KCCChassam';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCCChassam.woff2') format('woff2');
+    font-family: 'Beeunhye';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Beeunhye.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
+
+.body-container{
+	 background-image: url('../image/배경.jpg');
+    background-size: cover;
+    cursor : url(../image/cursor.png.png) auto;
+}
+
+
 * {
-    font-family: 'KCCChassam';
+    font-family: 'Beeunhye';
     box-sizing: border-box;
     margin: 0;
-}
+    cursor : url(../image/cursor.png.png) auto;
+} 
 
 main {
     width: 1000px;
@@ -24,10 +43,13 @@ main {
 
 main h1 {
     margin-bottom: 20px;
+    font-size: 40px;
+    text-align: center;
+
 }
 
 table button {
-    background-color: red;
+    background-color: black;
     color: white;
     font-size: 25px;
     border: none;
@@ -40,18 +62,45 @@ table {
     font-size: 25px;
 }
 
+
+.circle{
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    flex-direction: column;
+}
+
+
+
 .login-form {
-    
-    border: 1px solid black;
+
+    background-color: white;
+    border: 3px solid black;
     border-radius: 20px;
 
     padding: 50px;
-    box-shadow: 10px 5px 5px #ddd;
+    box-shadow: 10px 5px 5px rgba(120, 120, 120,0.5);
     
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
+
+input {
+    background-color: transparent;
+  }
+  
+  input:focus {
+    outline: none;
+  }
+  
+  .bottom-b {
+    border-width: 0 0 1px;
+  }
+
+
 
 .login-form div {
     font-size: 20px;
@@ -59,6 +108,7 @@ table {
 }
 
 .login-form button {
+    border-radius: 5px;
     background-color: black;
     color: white;
     font-size: 20px;
@@ -76,6 +126,10 @@ table {
     text-decoration: none;
     padding: 10px;
     margin-top: 20px;
+    position: absolute;
+    left: 700px;
+    top: 50px;
+
 }
 
 .button-div {
@@ -85,7 +139,7 @@ table {
 }
 
 .insert-btn {
-    background-color: green;
+    background-color: black;
     color: white;
     font-size: 20px;
     cursor: pointer;
@@ -97,15 +151,15 @@ table {
 }
 
 .delete-btn {
-    background-color: red;
+    background-color: white;
     text-decoration: none;
-    color: white;
+    color: black;
     padding: 0 10px;
     cursor: pointer;
 }
 
 .update-btn{
-    background-color: blue;
+    background-color: black;
     text-decoration: none;
     color: white;
     padding: 0 10px;
@@ -113,24 +167,28 @@ table {
 }
 
 .signup {
+
 	color: black;
     font-size: 20px;
     cursor: pointer;
 }
 
 .signup-form {
+  
 	display: flex;
 	flex-direction: column;
 	
 }
 
 .signup-form p {
+   
 	margin-top: 20px;
 }
 
 .signup-form button {
 	font-size: 20px;
-	background-color: yellowgreen;
+    color: white;
+	background-color: black;
 	border: none;
 	margin-top: 20px;
 	cursor: pointer;
@@ -138,6 +196,7 @@ table {
 }
 
 input {
+    color: none ;
     height: 40px;
     font-size: 18px;
 }
@@ -146,10 +205,93 @@ input {
 	font-size: 18px;
 }
 
-.confirm{ color : green; }
+.confirm{ color : black}
 .error{ color : red; }
 
 #idMsg {
     font-size: 11px;
     margin-top: 10px;
+}
+
+
+div#addrecord{
+
+    display: flex;
+    margin: auto;
+
+
+}
+
+
+
+.obox{
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+
+    padding: 50px;
+    box-shadow: 10px 5px 5px rgba(120, 120, 120,0.2);
+
+    float: left;
+    margin-right: 100px;
+    width:30%;
+    box-sizing: border-box;
+
+}
+
+.tbox{
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+
+    padding: 50px;
+    box-shadow: 10px 5px 5px rgba(120, 120, 120,0.2);
+
+    float: left;
+    margin-right: 40px;
+    width:30%;
+    box-sizing: border-box;
+
+}
+
+
+.thbox{
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+
+    padding: 50px;
+    box-shadow: 10px 5px 5px rgba(120, 120, 120,0.2);
+
+    float: left;
+    margin-right: 20px;
+    width:30%;
+    box-sizing: border-box;
+
+}
+
+
+.fbox{
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+
+    padding: 50px;
+    box-shadow: 10px 5px 5px rgba(120, 120, 120,0.2);
+
+    float: left;
+    margin-right: 20px;
+    width:30%;
+    box-sizing: border-box;
+
+}
+
+
+
+
+
+.intro{
+
+    border-width: 0 0 2px;
+
 }

@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">ㄴ
+	<meta charset="UTF-8">
 	
 	<%--css, js 파일 연결할때 webapp 폴더 기준! --%>
 	<link rel="stylesheet" href="/resources/css/main.css">
