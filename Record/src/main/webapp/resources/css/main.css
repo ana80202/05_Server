@@ -1,11 +1,20 @@
 
 /* 로고용 폰트 */
-/*@font-face {
+@font-face {
     font-family: 'TTTogether';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/TTTogetherA.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-}*/
+}
+
+
+@font-face {
+    font-family: 'BagelFatOne-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_JAMO@1.0/BagelFatOne-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 
 /* 본문용 폰트 */
 @font-face {
@@ -16,10 +25,29 @@
 }
 
 
+
+.logo{
+  /*font-family: 'BagelFatOne-Regular';
+   -webkit-text-stroke: 0.3px white;
+
+   margin-bottom: 18px;
+   font-size: 30px;
+   text-align: center;*/ 
+
+   background-image: url('../image/logo.png');
+   background-size: cover;
+
+   width: 190px;
+   height: 65px;
+
+}
+
 .body-container{
-	 background-image: url('../image/배경.jpg');
+    
+
+	background-image: url('../image/배경.jpg');
     background-size: cover;
-    cursor : url(../image/cursor.png.png) auto;
+
 }
 
 
@@ -27,7 +55,6 @@
     font-family: 'Beeunhye';
     box-sizing: border-box;
     margin: 0;
-    cursor : url(../image/cursor.png.png) auto;
 } 
 
 main {
@@ -42,9 +69,9 @@ main {
 }
 
 main h1 {
-    margin-bottom: 20px;
-    font-size: 40px;
-    text-align: center;
+   margin-bottom: 20px;
+   font-size: 20px;
+   text-align: center;
 
 }
 
@@ -118,7 +145,14 @@ input {
     margin-bottom: 20px;
 }
 
+
+
+
+
+
+
 .logout-btn {
+    border-radius: 5px;
     background-color: black;
     color: white;
     font-size: 20px;
@@ -127,18 +161,40 @@ input {
     padding: 10px;
     margin-top: 20px;
     position: absolute;
-    left: 700px;
-    top: 50px;
+    left: 900px;
+    top: 8px;
+
+    
 
 }
 
 .button-div {
     display: flex;
-
     margin: 0 20px;
 }
 
-.insert-btn {
+.insert-btn1 {
+
+    border-radius: 5px;
+    width: 100px;
+
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+    border: none;
+}
+
+.insert-btn2{
+    border-radius: 5px;
+    width: 100%;
+   
+  
     background-color: black;
     color: white;
     font-size: 20px;
@@ -146,9 +202,13 @@ input {
     text-decoration: none;
     padding: 10px;
     margin-top: 20px;
-    margin-right: 10px;
     border: none;
+
 }
+
+
+
+
 
 .delete-btn {
     background-color: white;
@@ -159,12 +219,14 @@ input {
 }
 
 .update-btn{
+    border-radius: 5px;
     background-color: black;
     text-decoration: none;
     color: white;
     padding: 0 10px;
     cursor: pointer;
 }
+
 
 .signup {
 
@@ -239,6 +301,12 @@ div#addrecord{
 
 }
 
+
+
+
+
+
+
 .tbox{
     background-color: white;
     border: 3px solid black;
@@ -248,50 +316,50 @@ div#addrecord{
     box-shadow: 10px 5px 5px rgba(120, 120, 120,0.2);
 
     float: left;
-    margin-right: 40px;
+    margin-right: 0px;
     width:30%;
     box-sizing: border-box;
 
 }
 
+.conbox{
+border-radius: 5px;
 
-.thbox{
-    background-color: white;
-    border: 3px solid black;
-    border-radius: 20px;
-
-    padding: 50px;
-    box-shadow: 10px 5px 5px rgba(120, 120, 120,0.2);
-
-    float: left;
-    margin-right: 20px;
-    width:30%;
-    box-sizing: border-box;
 
 }
-
-
-.fbox{
-    background-color: white;
-    border: 3px solid black;
-    border-radius: 20px;
-
-    padding: 50px;
-    box-shadow: 10px 5px 5px rgba(120, 120, 120,0.2);
-
-    float: left;
-    margin-right: 20px;
-    width:30%;
-    box-sizing: border-box;
-
-}
-
-
-
-
 
 .intro{
 
-    border-width: 0 0 2px;
+     font-size: 25px;
+
+     top: 100px;
+
+    text-decoration: underline;
 
 }
+
+
+
+
+
+
+.contentbox{
+
+ 
+
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+
+    padding: 50px;
+    box-shadow: 10px 5px 5px rgba(120, 120, 120,0.2);
+
+    float: left;
+    margin-right: 100px;
+    width:65%;
+    box-sizing: border-box;
+
+
+
+}
+

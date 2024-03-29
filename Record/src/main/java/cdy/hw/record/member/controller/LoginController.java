@@ -46,9 +46,9 @@ public class LoginController extends HttpServlet {
 				//현재 로그인한 회원이 등록한 recordmemberList 목록 조회하기
 				recordService recordService = new recordService();
 				
-				//List<DayRecord> recordList = recordService.selectAll(loginMember.getMemberNo());
+				List<DayRecord> recordList = recordService.selectAll(loginMember.getMemberNo());
 				
-				//session.setAttribute("recordList",recordList);
+				session.setAttribute("recordList",recordList);
 		
 				//---------------------------------------------------------------------------------
 				

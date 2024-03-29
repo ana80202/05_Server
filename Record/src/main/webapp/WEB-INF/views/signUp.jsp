@@ -12,7 +12,7 @@
 </head>
 <body>
 	<main>
-		<h1>회원가입</h1>
+		<h1 class ="signlogo">회원가입</h1>
 		
 		<form action= "/signUp" method="post" class="signup-form" onsubmit="return validate()">
 			<p>아이디</p>

@@ -21,7 +21,8 @@
 	<%--로그인을 하지 않았다면 : 로그인/회원가입 입력 폼 출력--%>
 			<c:when test="${empty sessionScope.loginMember}">
 				
-				<h1>오늘의 기록</h1>
+				<div class= "logo" ></div>
+			<!-- 	<h1>오늘의 기록</h1> -->
 				
 				<form action="/login" method="post" class="login-form">
 
@@ -46,30 +47,17 @@
 			
 			<h1 class="intro">${sessionScope.loginMember.memberNickname}님의 기록</h1>
 			
-			<div class="button-div">	
-			<a href="/logout" class="logout-btn">로그아웃</a>
-			</div>
-			
-			<div id="addrecord">
-			
-			<div class="obox">1</div>
-			<div class="tbox" >2</div>
-			<div class="thbox">3</div>
-			<div class="fbox" >4</div>
-			
-			</div>
-	
-			
-			
-				<!-- <h1>${sessionScope.loginMember.memberNickname}의 기록</h1>
-				
-				<c:choose>
+			<c:choose>
 				<c:when test="${empty recordList}">
-					<h2>!</h2>
+					<h2>아직 기록되지 않았어요.</h2>
 				</c:when>
 				
 				
 				<c:otherwise>
+					
+		
+					<div class = "contentbox">
+					
 					<table>
 						<c:forEach var="DayRecord" items="${recordList}">
 							<tr>
@@ -83,13 +71,32 @@
 							</tr>
 						</c:forEach>
 					</table>
+					
+					
+					</div>
+				
+	
+				
+					
 				</c:otherwise>
 				</c:choose>
-				
-				<div class="button-div">
-					<a href="/insert" class="insert-btn"> 등록하기</a>
-					<a href="/logout" class="logout-btn">로그아웃</a>
-				</div> -->
+			
+			
+			
+			
+			<div class="button-div">	
+			<a href="/logout" class="logout-btn">로그아웃</a>
+			</div>
+			
+			
+			<div id="addrecord">
+			
+		
+			<div class="button-div">
+					<a href="/insert" class="insert-btn1">기록하기</a>
+				</div>
+		
+			</div>
 				
 				<script>
 					console.log("test");
@@ -102,7 +109,16 @@
 </c:choose>
 </main>
 <%--------------------------------------------------------------------------------------------------------------------- --%>	
-			
+	
+	<c:if test="${not empty sessionScope.message}">
+	
+	<script type="text/javascript">
+	   alert('${message}');
+	</script>
+	
+	 <c:remove var="message" scope="session"/>
+	 
+	</c:if>	
 			
 	
 
